@@ -37,4 +37,22 @@ class IndexController extends BaseController
         }
         return view('index/index', $data);
     }
+
+    /**
+     * @RequestMapping(route="/sleep", method={RequestMethod::GET,RequestMethod::POST})
+     */
+    public function sleep()
+    {
+        sleep(1);
+        return $this->response->success();
+    }
+
+    /**
+     * @RequestMapping(route="/so-sleep", method={RequestMethod::GET,RequestMethod::POST})
+     */
+    public function coSleep()
+    {
+        \co::sleep(1);
+        return $this->response->success();
+    }
 }
